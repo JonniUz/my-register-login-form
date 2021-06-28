@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegisterForm
 from django.contrib.auth import login
+from django.contrib import messages
+
+from .forms import UserRegisterForm
 
 
 def login(request):
@@ -12,8 +14,9 @@ def signup(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
+            username = form.cleaned_data['username']
             user = form.save()
-            login(user)
+            messages.error(request,f'{username} have been signed up! Now you are able to log in')
             return redirect('login')
     else:
         form = UserRegisterForm()

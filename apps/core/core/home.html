@@ -1,0 +1,18 @@
+
+
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<h1>Home Page</h1>
+
+{% for user in users %}
+
+
+<p style="color: #dddddd">    {{ user.username }}   </p>
+    <p style="color: #dddddd">{{ user.email }}</p>
+    <p style="color: #dddddd">{{ user.password }}</p>
+<hr>
+{% endfor %}
+
+{% endblock content %}
