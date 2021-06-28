@@ -1,18 +1,15 @@
-
-
-{#{% extends 'core/base.html' %} #}
+{% extends 'core/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
 
 <h1>Home Page</h1>
-<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
 {% for user in users %}
 
 
-<p>    {{ user.username.as_crispy_field }}   </p>
-    <p>{{ user.email }}</p>
-    <p>{{ user.password }}</p>
+<p> {{ user.username|safe }} </p>
+<p>{{ user.email }}</p>
+<p>{{ user.password }}</p>
 <hr>
 {% endfor %}
 

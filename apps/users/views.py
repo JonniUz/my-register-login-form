@@ -6,7 +6,7 @@ from .forms import UserRegisterForm
 
 
 def login(request):
-    return render(request, 'users/login.html')
+    return render(request, 'registration/login.html')
 
 
 def signup(request):
@@ -20,4 +20,4 @@ def signup(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'users/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form})

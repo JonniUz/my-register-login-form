@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="login-box">
+
+        <div class="question-box">
+            <p class="question">You have been logged out</p>
+        </div>
+        <button class="btn" id="login-btn"><a style="color: #f0f0f0" href="{% url 'login' %}">Login again</a></button>
+    </div>
+</form>
+
+<div class="success-box">
+    <h1>You have been logged in!</h1>
+</div>
+
+{% endblock %}

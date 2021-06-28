@@ -6,8 +6,8 @@
 			  {% csrf_token %}
 		<div class="input-section">
 		  <i class="far fa-user"></i>
-			{{ form.username.label|as_crispy_field }}
-			{{ form.username }}
+			{{ form.username.label }}
+			{{ form.username|safe }}
 		</div>
 		<div class="input-section">
 		  <i class="far fa-envelope"></i>
